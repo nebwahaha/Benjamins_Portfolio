@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        :root {
+            --primary-color: #3dc8ff;
+            --background-color: #121212;
+            --text-color: #e4e6eb;
+            --card-color: #1e1e1e;
+            --hover-color: #64d2ff;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: var(--card-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .card:hover {
+            background-color: var(--hover-color);
+            color: #ffffff; 
+        }
+
+        body.light-mode {
+            --primary-color: #0078d7;
+            --background-color: #f4f4f4;
+            --text-color: #212529;
+            --card-color: #ffffff;
+            --hover-color: #005ea6;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .settings button {
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--text-color);
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .main-content {
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 20px;
+        }
+
+        .intro a {
+            color: var(--hover-color);
+            text-decoration: none;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .image {
+            flex-shrink: 0;
+        }
+
+        .image img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .section {
+            background-color: var(--card-color);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 18px;
+            height: 150px;
+        }
+
+        .section h3 {
+            margin: 0 0 15px;
+            color: var(--primary-color);
+            font-size: 22px;
+        }
+
+
+        .technologies {
+            margin-top: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .tech {
+            background-color: var(--card-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .tech:hover {
+            background-color: var(--hover-color);
+            color: #fff;
+        }
+
+        
+        .projects {
+            margin-top: 0; 
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .project-list {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap; 
+        width: 100%;
+        }
+
+        .project {
+            flex: 1 1 calc(33.33% - 40px);
+            max-width: 400px;
+            min-width: 400px;
+            height: 300px;
+            background-color: var(--card-color);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project img {
+            width: 100%; 
+            height: 150px;
+            object-fit: cover; 
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .project:hover {
+            transform: translateY(-10px);
+            background-color: var(--hover-color);
+            color: #ffffff;
+        }
+
+        .project h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        #achievements-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color); 
+            color: var(--text-color); 
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #achievements-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .achievements-list {
+            max-height: 75vh;
+            overflow-y: auto;
+            width: 80%;
+            padding: 10px;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--hover-color) var(--card-color); 
+        }
+
+        .achievement-card {
+            background-color: var(--card-color); 
+            border-radius: 10px;
+            height: 200px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        
+
+        .achievement-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color); 
+        }
+
+        .achievement-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">A</div>
+            <div class="settings">
+                <button class="theme-toggle">&#9728;</button>
+                <button class="menu-toggle">&#9776;</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="intro">
+                <div class="intro-content">
+                    <div class="text">
+                        <h1><span class="name">Benjamin Ocampo</span>, <br>full-stack developer</h1>
+                        <p>asd
+                            <a href="#">asd</a>, <a href="#">asd</a> & <a href="#">asd</a>.
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="your-image-url.jpg" alt="Profile Image" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sections">
+                <div class="section">
+                    <h3>Blog</h3>
+                    <p></p>
+                </div>
+                <div class="section" id="skills-section">
+                    <h3>Skills</h3>
+                    <p></p>
+                </div>
+                <div class="section">
+                    <h3>Projects</h3>
+                    <p></p>
+                </div>
+                <div class="section">
+                    <h3>Let's talk</h3>
+                    <p></p>
+                </div>
+            </div>
+        </main>
+
+        <div class="technologies" id="technologies-section">
+            <div>
+                <h2>Technologieën</h2>
+                <div class="tech-list">
+                    <div class="tech">Typescript</div>
+                    <div class="tech">NextJS</div>
+                    <div class="tech">Node</div>
+                    <div class="tech">PHP</div>
+                    <div class="tech">Vite</div>
+                    <div class="tech">Webpack</div>
+                    <div class="tech">Prisma</div>
+                    <div class="tech">Another Tech</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects" id="projects-section">
+        <h2>My Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <img src="path-to-image1.jpg" alt="Project 1 Image">
+                <h3>Project 1</h3>
+                <p>Description of the first project.</p>
+            </div>
+            <div class="project">
+                <img src="path-to-image2.jpg" alt="Project 2 Image">
+                <h3>Project 2</h3>
+                <p>Description of the second project.</p>
+            </div>
+            <div class="project">
+                <img src="path-to-image3.jpg" alt="Project 3 Image">
+                <h3>Project 3</h3>
+                <p>Description of the third project.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="achievements" id="achievements-section">
+        <h2>Achievements</h2>
+        <div class="achievements-list">
+            <div class="achievement-card">
+                <h3>Achievement 1</h3>
+                <p>Description of the achievement.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Achievement 2</h3>
+                <p>Description of the achievement.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Achievement 3</h3>
+                <p>Description of the achievement.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Achievement 4</h3>
+                <p>Description of the achievement.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Achievement 5</h3>
+                <p>Description of the achievement.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Achievement 6</h3>
+                <p>Description of the achievement.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+
+        gsap.from(".logo", { duration: 1, x: -100, opacity: 0 });
+        gsap.from(".settings button", { duration: 1, x: 100, opacity: 0, stagger: 0.2 });
+        gsap.from(".intro h1", { duration: 1, y: -50, opacity: 0, delay: 0.5 });
+        gsap.from(".intro p", { duration: 1, y: -30, opacity: 0, delay: 0.7 });
+        gsap.from(".section", { duration: 1, scale: 0.8, opacity: 0, stagger: 0.3, delay: 1 });
+
+        function smoothScroll(trigger, target) {
+            const triggerElement = document.querySelector(trigger);
+            const targetElement = document.querySelector(target);
+    
+            if (triggerElement && targetElement) {
+                triggerElement.addEventListener("click", () => {
+                    targetElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                    });
+                });
+            }
+        }
+    
+        smoothScroll("#skills-section", "#technologies-section");
+        smoothScroll(".sections .section:nth-child(3)", "#projects-section");
+    
+        const sections = Array.from(
+            document.querySelectorAll(".main-content, .technologies, #projects-section, #achievements-section")
+        );
+        let currentSectionIndex = 0;
+        let isScrolling = false;
+    
+        const achievementsSection = document.querySelector("#achievements-section");
+        const achievementsList = achievementsSection?.querySelector(".achievements-list");
+    
+        window.addEventListener(
+            "wheel",
+            (event) => {
+
+                if (achievementsList?.matches(":hover")) {
+                    return;
+                }
+    
+                if (isScrolling) {
+                    event.preventDefault();
+                    return;
+                }
+    
+                isScrolling = true;
+    
+                event.preventDefault();
+    
+                if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
+                    currentSectionIndex++;
+                } else if (event.deltaY < 0 && currentSectionIndex > 0) {
+                    currentSectionIndex--;
+                }
+
+                sections[currentSectionIndex].scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 500);
+            },
+            { passive: false }
+        );
+
+        function animateOnVisibility(target, animationConfig, threshold = 0.5) {
+            const elements = document.querySelectorAll(target);
+            const animation = gsap.from(elements, { ...animationConfig, paused: true });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animation.play();
+                    }
+                });
+            }, { threshold });
+
+            elements.forEach((el) => observer.observe(el));
+        }
+
+
+        animateOnVisibility(".tech", { duration: 1, scale: 0.5, opacity: 0, stagger: 0.2 });
+        animateOnVisibility(".project", { duration: 1, scale: 0.8, opacity: 0, stagger: 0.3 });
+
+        const themeToggleButton = document.querySelector(".theme-toggle");
+    
+        if (themeToggleButton) {
+            themeToggleButton.addEventListener("click", () => {
+                document.body.classList.toggle("light-mode");
+    
+                themeToggleButton.innerHTML = document.body.classList.contains("light-mode")
+                    ? "&#9728;"
+                    : "&#9790;";
+            });
+        }
+
+        function animateAchievementsOnVisibility(target, threshold = 0.5) {
+            const elements = document.querySelectorAll(target);
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        gsap.from(entry.target, {
+                            duration: 2,
+                            x: -200, 
+                            opacity: 1,
+                            ease: "elastic.out(-6, 1)",
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold });
+            
+            elements.forEach((el) => observer.observe(el));
+        }
+        animateAchievementsOnVisibility(".achievement-card");
+    </script>
+</body>
+</html>
