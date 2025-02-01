@@ -11,7 +11,187 @@
             --primary-color: #3dc8ff;
             --background-color: #121212;
             --text-color: #e4e6eb;
-            --card-color: #1e1e1e;
+            --card-color: #1e1e1e;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="logo">hej!</div>
+                <div class="settings">
+                    <button class="theme-toggle">&#9728;</button>
+                    <button class="menu-toggle">&#9776;</button>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <div class="intro">
+                    <div class="intro-content">
+                        <div class="text">
+                            <h1><span class="name">Benjamin Ocampo</span>, <br>Junior developer</h1>
+                            <p>Find me at
+                                <a href="https://github.com/nebwahaha">github</a>, <a href="https://www.linkedin.com/in/benjamin-s-ocampo-0aa2a2348/">Linkedin</a> or send me an e-mail at <a href="#" title="press to copy" id="copyEmail">22-0149c@gmail.com</a>
+                                <span id="emailCopied" style="display: none; color: green; margin-left: 10px;">Copied!</span>                                
+                            </p>
+                        </div>
+                        <div class="image">
+                            <img src="profilepic.png" alt="Profile Image" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sections">
+                    <div class="section1">
+                        <h3>About Me</h3>
+                        <p>Nice to meet you! Im Benjamin a junior Developer</p>
+                    </div>
+                    <div class="section" id="skills-section">
+                        <h3>Skills</h3>
+                        <p>Here are some programming languages and tools I know how to utilize.</p>
+                    </div>
+                    <div class="section">
+                        <h3>Projects</h3>
+                        <p>Recent programming projects I did which include frontend and backend.</p>
+                    </div>
+                    <div class="section">
+                        <h3>Achievements</h3>
+                        <p>Certificates and Achievements that i have.</p>
+                    </div>
+                </div>
+            </main>
+
+            <div class="technologies" id="technologies-section">
+                <div class="tech-container">
+                    <h2>Front End</h2>
+                    <div class="tech-list">
+                        <div class="tech"><img src="https://icongr.am/devicon/html5-plain-wordmark.svg?size=128&color=ffffff" alt="C#" class="tech-icon"><span class="tech-name">HTML</span></div>                        
+                        <div class="tech"><img src="https://icongr.am/devicon/css3-plain-wordmark.svg?size=128&color=ffffff" alt="Java" class="tech-icon"><span class="tech-name">CSS</span></div>
+                        <div class="tech"><img src="https://icongr.am/devicon/javascript-plain.svg?size=128&color=ffffff" alt="PHP" class="tech-icon"><span class="tech-name">JavaScript</span></div>
+                        <div class="tech"><img src="https://icongr.am/devicon/angularjs-plain.svg?size=128&color=ffffff" alt="Python" class="tech-icon"><span class="tech-name">Angular</span></div>
+                    </div>
+                </div>
+            
+                <div class="tech-container">
+                    <h2>Back End</h2>
+                    <div class="tech-list">
+                        <div class="tech"><img src="https://icongr.am/devicon/csharp-plain.svg?size=128&color=ffffff" alt="GitHub" class="tech-icon"><span class="tech-name">C#</span></div>
+                        <div class="tech"><img src="https://icongr.am/devicon/cplusplus-plain.svg?size=128&color=ffffff" alt="VS Code" class="tech-icon"><span class="tech-name">C++</span></div>
+                        <div class="tech"><img src="https://icongr.am/devicon/php-plain.svg?size=128&color=ffffff" alt="Git" class="tech-icon"><span class="tech-name">PHP</span></div>
+                        <div class="tech"><img src="https://icongr.am/entypo/database.svg?size=128&color=ffffff" alt="Docker" class="tech-icon"><span class="tech-name">SQL</span></div>
+                    </div>
+                </div>
+            
+                <div class="tech-container">
+                    <h2>Others</h2>
+                    <div class="tech-list">
+                        <div class="tech"><img src="https://icongr.am/devicon/git-plain.svg?size=128&color=ffffff" alt="Linux" class="tech-icon"><span class="tech-name">GIT</span></div>
+                        <div class="tech"><img src="https://icongr.am/devicon/photoshop-plain.svg?size=128&color=ffffff" alt="Stack Overflow" class="tech-icon"><span class="tech-name">PhotoShop</span></div>
+                    </div>
+                </div>
+            </div>
+             
+        
+        <div class="projects" id="projects-section">
+            <h2>My Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <img src="game.png" alt="Project 1 Image">
+                    <h3>8-bit conversion Game</h3>
+                    <p>A simple binary game where you have to convert the given decimal number to its binary form. This game also saves scores of players.</p>
+                    <p>C#, SQL</p>
+                </div>
+                <div class="project">
+                    <img src="park.png" alt="Project 2 Image">
+                    <h3>Parking Management System</h3>
+                    <p>An application for managing parking on a mall, this application manages everything from vehicles going in and out of the mall premises.</p>
+                    <p>C#, SQL</p>
+                </div>
+                <div class="project">
+                    <img src="cookie.png" alt="Project 3 Image">
+                    <h3>Crumbs Bakery Online Store</h3>
+                    <p>Online store website for Crumbs company, where people can make purchases of a wide variety of pastries and scroll through different products.</p>
+                    <p>HTML, CSS, JS </p>
+                </div>
+
+                <div class="project">
+                    <img src="pet.png" alt="Project 3 Image">
+                    <h3>PetsRUS POS</h3>
+                    <p>POS system for PetsRUS where employees can take orders from people in the store, restock inventory, get notified when stocks are low and more.</p>
+                    <p>C#, SQL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievements" id="achievements-section">
+            <h2>Achievements</h2>
+            <div class="achievements-list">
+                <div class="achievement-card">
+                    <div class="achievement-content">
+                        <div class="achievement-text">
+                            <h3>Types of Cyber Security</h3>
+                            <p></p>
+                        </div>
+                        <div class="achievement-image">
+                            <img src="cybersec.png" class="clickable-image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-content">
+                        <div class="achievement-text">
+                            <h3>Computer Networking Security</h3>
+                            <p></p>
+                        </div>
+                        <div class="achievement-image">
+                            <img src="Alison.png" class="clickable-image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-content">
+                        <div class="achievement-text">
+                            <h3>Introduction to Cyber Security</h3>
+                            <p></p>
+                        </div>
+                        <div class="achievement-image">
+                            <img src="intro.png" class="clickable-image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-content">
+                        <div class="achievement-text">
+                            <h3>coming soon</h3>
+                            <p></p>
+                        </div>
+                        <div class="achievement-image">
+                            <img src="" alt="coming soon" class="clickable-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="imageModal" class="image-modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="fullImage">
+            <div id="caption"></div>
+        </div>
+
+        <button id="backToTop" class="back-to-top">
+            <img src="https://icongr.am/entypo/arrow-with-circle-up.svg?size=128&color=ffffff" alt="Up" />
+        </button>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="javarice.js"></script>
+    </body>
+</html>
             --hover-color: #64d2ff;
         }
 
